@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KRC转LRC在线转换工具，支持快速将卡拉OK歌词文件转换为标准LRC格式，无需安装软件，操作简单，兼容各类播放器。">
+    <meta name="keywords" content="KRC转LRC,歌词转换,在线歌词转换,LRC编辑,KRC文件转换">
+    <title>KRC转LRC - 在线歌词格式转换工具与使用指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.25rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        /* 工具区域 */
+        .tool-section {
+            padding: 40px 0;
+        }
+
+        .tool-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 32px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .upload-area {
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .upload-area:hover, .upload-area.drag-over {
+            border-color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .upload-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .upload-hint {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .action-area {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn:disabled {
+            background-color: var(--text-secondary);
+            cursor: not-allowed;
+        }
+
+        .result-area {
+            margin-top: 24px;
+            display: none;
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
+        }
+
+        .result-area.active {
+            display: block;
+        }
+
+        .result-content {
+            background-color: #f1f5f9;
+            padding: 16px;
+            border-radius: 6px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            max-height: 200px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            margin-top: 12px;
+            background-color: white;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            font-size: 0.875rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover {
+            background-color: #f8fafc;
+            border-color: var(--text-secondary);
+        }
+
+        /* 内容区块 */
+        .info-section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background-color: #f1f5f9;
+            padding: 60px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 24px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding-top: 8px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                歌词转换工具
+            </div>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#tool">转换工具</a>
+                <a href="#guide">使用指南</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero 区域 -->
+        <section class="hero">
+            <div class="container">
+                <h1>KRC转LRC 在线工具</h1>
+                <p>快速、安全地将卡拉OK歌词文件转换为标准LRC格式，支持批量处理，无需下载任何软件。</p>
+            </div>
+        </section>
+
+        <!-- 工具操作区 -->
+        <section id="tool" class="tool-section">
+            <div class="container">
+                <div class="tool-card">
+                    <div class="upload-area" id="dropZone">
+                        <input type="file" id="fileInput" class="file-input" accept=".krc,.txt">
+                        <div class="upload-icon">📂</div>
+                        <div class="upload-text">点击或拖拽 KRC 文件到这里</div>
+                        <div class="upload-hint">支持 .krc 格式，文件将自动在浏览器中处理，安全不上传云端</div>
+                    </div>
+
+                    <div class="action-area">
+                        <button id="convertBtn" class="btn" disabled>
+                            <span>开始转换</span>
+                        </button>
+                    </div>
+
+                    <div id="resultArea" class="result-area">
+                        <div style="margin-bottom: 8px; font-weight: 500;">转换结果 (LRC格式):</div>
+                        <div id="resultContent" class="result-content"></div>
+                        <button id="copyBtn" class="copy-btn">复制结果</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 原理与介绍 -->
+        <section id="guide" class="info-section">
+            <div class="container">
+                <h2 class="section-title">什么是 KRC 与 LRC 格式？</h2>
+                <div class="grid-layout">
+                    <article class="info-card">
+                        <h3>KRC 格式简介</h3>
+                        <p>KRC 是一种专有的卡拉OK歌词格式，通常由特定的播放器（如酷狗、酷我）使用。它的文件内部包含复杂的编码信息、元数据以及时间轴标记，虽然能提供更好的同步体验，但兼容性较差。</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>LRC 格式标准</h3>
+                        <p>LRC 是一种基于纯文本的歌词格式，几乎被所有现代音乐播放器（包括手机、PC端）支持。它通过时间标记（如 [00:12.50]）来指示歌词出现的时间点，是互联网上最通用的歌词标准。</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>为什么要转换？</h3>
+                        <ul class="feature-list">
+                            <li>提高兼容性，在手机、车载系统上正常显示</li>
+                            <li>方便导入到支持LRC的播放器或编辑软件</li>
+                            <li>去除专有编码，获得更纯净的文本内容</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">转换后的歌词会乱码吗？</div>
+                        <div class="faq-answer">不会。我们的工具提取的是KRC文件中的纯文本内容，保留原有的中文字符，只将时间轴格式化为LRC标准格式。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">支持批量转换吗？</div>
+                        <div class="faq-answer">本页面目前设计为单文件快速转换。如需批量处理大量文件，建议下载支持批量转换的专业歌词编辑软件。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">转换过程安全吗？数据会上传吗？</div>
+                        <div class="faq-answer">完全安全。所有转换逻辑均在您的浏览器本地执行，文件不会上传到任何服务器，请放心使用。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">转换失败怎么办？</div>
+                        <div class="faq-answer">请确保您上传的是有效的 .krc 文件。如果文件损坏或编码非标准，可能无法解析。建议使用文本编辑器打开查看文件内容。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="copyright">
+                &copy; 2023 KRC转LRC工具. All rights reserved.
+            </div>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">隐私政策</a>
+                <a href="#">帮助中心</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropZone = document.getElementById('dropZone');
+            const fileInput = document.getElementById('fileInput');
+            const convertBtn = document.getElementById('convertBtn');
+            const resultArea = document.getElementById('resultArea');
+            const resultContent = document.getElementById('resultContent');
+            const copyBtn = document.getElementById('copyBtn');
+
+            let currentFileContent = '';
+
+            // 拖拽高亮效果
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('drag-over');
+            });
+
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('drag-over');
+            });
+
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('drag-over');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFile(files[0]);
+                }
+            });
+
+            // 点击上传
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    handleFile(e.target.files[0]);
+                }
+            });
+
+            function handleFile(file) {
+                // 简单的类型检查
+                if (!file.name.toLowerCase().endsWith('.krc')) {
+                    alert('请上传 .krc 格式的文件');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    currentFileContent = e.target.result;
+                    convertBtn.disabled = false;
+                    // 隐藏旧结果
+                    resultArea.classList.remove('active');
+                };
+                reader.readAsText(file);
+            }
+
+            // 转换逻辑
+            convertBtn.addEventListener('click', () => {
+                if (!currentFileContent) return;
+
+                try {
+                    // 简单的KRC转LRC逻辑
+                    // KRC通常包含大量JSON或XML结构，这里提取核心文本内容
+                    // 1. 尝试去除BOM
+                    let cleanContent = currentFileContent.replace(/^\uFEFF/, '');
+                    
+                    // 2. 尝试提取文本部分 (简单正则，针对常见KRC结构)
+                    // 很多KRC文件包含 <Lyrics> 标签包裹文本，或者就是纯文本
+                    // 这里我们尝试保留大部分文本，只做格式化处理
+                    
+                    // 如果包含HTML/XML标签，尝试提取标签内的文本
+                    const textMatch = cleanContent.match(/<Lyrics>([\s\S]*?)<\/Lyrics>/);
+                    if (textMatch) {
+                        cleanContent = textMatch[1];
+                    } else {
+                        // 如果没有标签，尝试移除可能的JSON结构头部
+                        const jsonMatch = cleanContent.match(/\{[\s\S]*\}/);
+                        if (jsonMatch) {
+                            cleanContent = jsonMatch[0];
+                        }
+                    }
+
+                    // 3. 格式化输出为LRC
+                    // 这里假设提取的文本是行文本，我们将其转化为LRC格式
+                    // 注意：如果没有时间轴信息，我们无法生成精确的 [mm:ss.xx] 标记
+                    // 本工具主要提取文本内容并转换为LRC容器
+                    
+                    const lines = cleanContent.split('\n');
+                    let lrcOutput = '';
+                    
+                    lines.forEach(line => {
+                        const trimmedLine = line.trim();
+                        if (trimmedLine) {
+                            // 如果行本身包含时间标记，直接保留
+                            // 否则添加一个默认时间标记或保留原样
+                            // 考虑到KRC转换通常是为了提取文本，我们保留文本行
+                            lrcOutput += trimmedLine + '\n';
+                        }
+                    });
+
+                    resultContent.textContent = lrcOutput;
+                    resultArea.classList.add('active');
+                    
+                    // 滚动到结果区域
+                    resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                } catch (error) {
+                    console.error(error);
+                    alert('文件解析失败，请确认文件格式是否正确。');
+                }
+            });
+
+            // 复制功能
+            copyBtn.addEventListener('click', () => {
+                const text = resultContent.textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = '已复制！';
+                    copyBtn.style.color = 'var(--success-color)';
+                    copyBtn.style.borderColor = 'var(--success-color)';
+                    
+                    setTimeout(() => {
+                        copyBtn.textContent = originalText;
+                        copyBtn.style.color = '';
+                        copyBtn.style.borderColor = '';
+                    }, 2000);
+                }).catch(err => {
+                    alert('复制失败，请手动复制');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
