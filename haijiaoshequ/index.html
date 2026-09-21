@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海角社区网址 - 海角社区官网入口与使用指南</title>
+    <meta name="description" content="海角社区网址提供官方入口与最新资讯。本站致力于为用户提供安全、稳定的社区浏览体验，包含热门话题讨论、用户互动指南及社区规范说明。">
+    <meta name="keywords" content="海角社区网址,海角社区,海角社区官网,社区入口,海角社区使用指南">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #d32f2f;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --container-width: 1200px;
+            --radius: 8px;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(180deg, #fff 0%, #f9f9f9 100%);
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .hero-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            padding: 10px 24px;
+            font-size: 15px;
+            border-radius: 50px;
+        }
+
+        /* Main Content */
+        main {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 22px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Guide Grid */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .guide-card {
+            background: var(--card-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .guide-card h3 {
+            font-size: 18px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .guide-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .guide-list li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .guide-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* Notice Section */
+        .notice-section {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .notice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .notice-header h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .notice-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .notice-item {
+            font-size: 13px;
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .notice-item a {
+            color: var(--text-secondary);
+        }
+
+        .notice-item a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 6px;
+            background-color: #eee;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 6px;
+        }
+
+        .tag-hot {
+            background-color: #ffebee;
+            color: var(--accent-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #fff;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: var(--spacing-lg);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 var(--spacing-lg) var(--spacing-lg);
+            color: var(--text-secondary);
+            font-size: 14px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ccc;
+            padding: 40px 0;
+            margin-top: var(--spacing-lg);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: var(--spacing-lg);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: var(--spacing-sm) 0;
+                gap: var(--spacing-md);
+            }
+
+            nav ul {
+                gap: var(--spacing-md);
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">海角<span>社区</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新动态</a></li>
+                    <li><a href="#">热门话题</a></li>
+                    <li><a href="#">社区规范</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>连接每一位热爱分享的用户</h1>
+            <p>欢迎访问海角社区。我们致力于打造一个真实、友善、多元化的网络交流空间。无论您是寻找资讯、分享生活点滴，还是参与深度话题讨论，这里都是您的理想去处。</p>
+            <div class="hero-links">
+                <a href="#" class="btn btn-primary hero-btn">进入社区</a>
+                <a href="#" class="btn btn-outline hero-btn">浏览公开内容</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- 入口与功能说明 -->
+        <section class="section-title">官方入口与使用指南</section>
+        <div class="guide-grid">
+            <article class="guide-card">
+                <h3>如何访问海角社区？</h3>
+                <p>通过本站提供的官方链接，您可以安全、快速地访问海角社区网站。请确保网络环境安全，避免访问非官方渠道，以保护您的账号和个人信息。</p>
+                <ul class="guide-list">
+                    <li>访问官方域名</li>
+                    <li>验证网站安全证书</li>
+                    <li>使用现代浏览器打开</li>
+                </ul>
+            </article>
+
+            <article class="guide-card">
+                <h3>注册与账号安全</h3>
+                <p>注册账号是参与社区互动的前提。我们建议用户设置强密码，并开启双重验证功能，以增强账户安全性。</p>
+                <ul class="guide-list">
+                    <li>填写真实有效的手机号</li>
+                    <li>阅读并遵守社区公约</li>
+                    <li>定期更新密码</li>
+                </ul>
+            </article>
+
+            <article class="guide-card">
+                <h3>社区互动礼仪</h3>
+                <p>为了维护良好的社区氛围，请尊重每一位用户。友善交流、理性讨论，共同抵制网络暴力和不良信息。</p>
+                <ul class="guide-list">
+                    <li>尊重他人观点</li>
+                    <li>拒绝人身攻击</li>
+                    <li>举报违规内容</li>
+                </ul>
+            </article>
+        </div>
+
+        <!-- 最新公告 -->
+        <section class="section-title">最新公告</section>
+        <div class="notice-section">
+            <div class="notice-header">
+                <h3>社区公告栏</h3>
+                <a href="#" style="font-size: 13px; color: var(--accent-color);">查看更多 &rsaquo;</a>
+            </div>
+            <div class="notice-list">
+                <div class="notice-item">
+                    <a href="#"><span class="tag tag-hot">重要</span>关于优化社区服务器稳定性的通知</a>
+                </div>
+                <div class="notice-item">
+                    <a href="#"><span class="tag">更新</span>海角社区 3.0 版本功能上线说明</a>
+                </div>
+                <div class="notice-item">
+                    <a href="#"><span class="tag">规范</span>新版社区行为规范征求意见稿</a>
+                </div>
+                <div class="notice-item">
+                    <a href="#"><span class="tag">活动</span>年度用户创作大赛即将开启</a>
+                </div>
+                <div class="notice-item">
+                    <a href="#"><span class="tag">安全</span>防范网络钓鱼与账号盗用提醒</a>
+                </div>
+                <div class="notice-item">
+                    <a href="#"><span class="tag">优化</span>移动端界面交互体验升级</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 常见问题 -->
+        <section class="section-title">常见问题 (FAQ)</section>
+        <div class="faq-section">
+            <div class="faq-item">
+                <button class="faq-question">访问海角社区网址时提示无法连接怎么办？</button>
+                <div class="faq-answer">
+                    请首先检查您的网络连接是否正常。如果网络正常但无法访问，可能是由于地区网络限制或网站临时维护。建议稍后再试，或尝试切换网络环境（如切换Wi-Fi/4G）。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">如何找回忘记的密码？</button>
+                <div class="faq-answer">
+                    在登录页面点击“忘记密码”链接，通过注册时绑定的手机号或邮箱进行验证，按照提示操作即可重置密码。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">社区发布内容有哪些限制？</button>
+                <div class="faq-answer">
+                    请勿发布违反法律法规、包含暴力色情、虚假广告或侵犯他人版权的内容。社区设有自动审核与人工巡查机制，违规内容将被删除并可能导致账号封禁。
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">如何联系客服？</button>
+                <div class="faq-answer">
+                    您可以通过社区内的“帮助中心”或“意见反馈”入口提交工单，我们的客服团队将在24小时内为您处理。
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">社区简介</a></li>
+                        <li><a href="#">团队介绍</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">账号安全</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">社区公约</a></li>
+                        <li><a href="#">无障碍访问</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 海角社区 版权所有 | 仅供演示与信息展示，非实际运营网址</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Toggle Logic
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+
+                    // Toggle current item
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+                                               </html>
