@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="苍黄反复 - 深度解读历史变迁与社会心态。本站致力于剖析成语背后的历史典故、现代应用场景及深层文化内涵，提供关于世事无常与局势变化的权威解读与思考。">
+    <meta name="keywords" content="苍黄反复, 世事无常, 历史典故, 成语释义, 社会变迁, 心态分析">
+    <title>苍黄反复 - 世事变迁的深度解读与文化溯源</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/history_change/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 3rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .section-link {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Definition Grid */
+        .definition-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .definition-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .definition-text p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background-color: #fff5f5;
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box strong {
+            color: var(--accent-color);
+        }
+
+        /* History Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+
+        .timeline-year {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Modern Application Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: #eef2f7;
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-link {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .card-link:hover::after {
+            margin-left: 10px;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: #fff;
+            transition: background-color 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 1.25rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background-color: #fafafa;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.25rem;
+            max-height: 500px; /* Arbitrary large height */
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        .icon-plus {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--text-main);
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .faq-item.active .icon-plus {
+            border-color: transparent;
+        }
+
+        .icon-plus::before, .icon-plus::after {
+            content: '';
+            position: absolute;
+            background-color: var(--text-main);
+            transition: background-color 0.3s;
+        }
+
+        .icon-plus::before {
+            width: 2px;
+            height: 10px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .faq-item.active .icon-plus::before {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .definition-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">苍<span>黄反复</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#definition" class="active">释义</a></li>
+                    <li><a href="#history">典故</a></li>
+                    <li><a href="#application">应用</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>世事如棋，局局新</h1>
+                <p>深度解析“苍黄反复”的历史渊源与现代意义，探讨局势变迁背后的必然与偶然。</p>
+            </div>
+        </section>
+
+        <section class="container" id="definition">
+            <div class="section-header">
+                <h2 class="section-title">词语释义</h2>
+                <a href="#" class="section-link">查看更多成语</a>
+            </div>
+            <div class="definition-grid">
+                <div class="definition-text">
+                    <h2>苍黄：青色与黄色</h2>
+                    <p>“苍黄”本指青色与黄色，在古文中常用来比喻天地的颜色，也象征着巨大的变化和动荡。在中医学中，苍黄还指代阴阳二气的变化。</p>
+                    <p>“反复”意为翻转、改变。合起来，“苍黄反复”形象地描绘了局势从混乱到稳定，或者从稳定到混乱的剧烈转换过程。</p>
+                    <div class="highlight-box">
+                        <p><strong>核心含义：</strong>形容局势发生巨大的、反复无常的变化，有时也用来比喻世事难料，人心难测。</p>
+                    </div>
+                    <p>这一成语极具画面感，让人联想到天地变色、沧海桑田的壮阔与苍凉。</p>
+                </div>
+                <div class="definition-image">
+                    <img src="https://picsum.photos/seed/change/600/400.jpg" alt="天地变色示意图" style="border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="history">
+            <div class="section-header">
+                <h2 class="section-title">历史典故</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">先秦时期</div>
+                    <div class="timeline-content">
+                        <h3>《史记》中的记载</h3>
+                        <p>该成语的源头可追溯至司马迁的《史记·平津侯主父列传》。文中描述了世事变迁如同青黄颜色的更替一样迅速且不可预测，强调了历史进程的宏大与无常。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">唐代</div>
+                    <div class="timeline-content">
+                        <h3>文学意象的定型</h3>
+                        <p>在唐代的诗词歌赋中，“苍黄”逐渐成为描写战乱、朝代更替和人生际遇的常用意象，与“反复”结合，形成了对动荡时代的深刻隐喻。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">明清小说</div>
+                    <div class="timeline-content">
+                        <h3>通俗化的传播</h3>
+                        <p>在《三国演义》及明清白话小说中，这一词汇开始频繁出现，用于形容人物命运的起伏和江湖局势的瞬息万变。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="application">
+            <div class="section-header">
+                <h2 class="section-title">现代应用与语境</h2>
+            </div>
+            <div class="cards-grid">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/politics/400/300.jpg" alt="政治局势" class="card-image">
+                    <div class="card-body">
+                        <span class="card-tag">政治局势</span>
+                        <h3 class="card-title">国际关系的变化</h3>
+                        <p class="card-desc">在国际新闻报道中，常用来形容国家间联盟的破裂与重组，或者地缘政治格局的剧烈调整。</p>
+                        <a href="#" class="card-link">阅读深度分析</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/finance/400/300.jpg" alt="金融市场" class="card-image">
+                    <div class="card-body">
+                        <span class="card-tag">经济领域</span>
+                        <h3 class="card-title">经济周期的波动</h3>
+                        <p class="card-desc">描述市场经济从繁荣到萧条，再从萧条走向繁荣的循环过程，强调其不可预测性。</p>
+                        <a href="#" class="card-link">了解经济周期</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/tech/400/300.jpg" alt="技术变革" class="card-image">
+                    <div class="card-body">
+                        <span class="card-tag">社会变革</span>
+                        <h3 class="card-title">技术颠覆与适应</h3>
+                        <p class="card-desc">在科技飞速发展的今天，行业规则被重新洗牌，企业和个人都在经历着“苍黄反复”的适应过程。</p>
+                        <a href="#" class="card-link">探索变革趋势</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="container" id="faq">
+            <div class="section-header">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>苍黄反复和沧海桑田有什么区别？</span>
+                        <div class="icon-plus"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>“苍黄反复”更侧重于<strong>局势、地位或状态的剧烈翻转</strong>，强调变化的过程和反复性；而“沧海桑田”更侧重于<strong>时间跨度带来的巨大变化</strong>，强调从荒芜到繁华或从繁华到荒芜的沧桑感，通常指代地理或宏观历史的变迁。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>这个词是贬义词还是褒义词？</span>
+                        <div class="icon-plus"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>这个词本身是<strong>中性偏贬义</strong>的。它通常带有一种对动荡、混乱和不可控的感叹。但在特定语境下，如果用来形容事物发展过程中的曲折前进，也可能带有一种客观描述的意味。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>在写作中如何正确使用“苍黄反复”？</span>
+                        <div class="icon-plus"></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>建议用于描述<strong>政治斗争、军事形势、重大社会变革或个人命运的重大转折</strong>。例如：“在过去的十年里，该地区的经济政策经历了苍黄反复，市场信心一度受到严重打击。”</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于苍黄反复</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.6;">
+                        本站致力于提供关于成语文化与历史典故的深度解读，帮助读者理解汉语词汇背后的历史逻辑与社会心理。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#definition">词语释义</a></li>
+                        <li><a href="#history">历史典故</a></li>
+                        <li><a href="#application">现代应用</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关资源</h4>
+                    <ul>
+                        <li><a href="#">汉语词典</a></li>
+                        <li><a href="#">历史文献</a></li>
+                        <li><a href="#">文化研究</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 苍黄反复文化研究平台. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth Scroll for Navigation
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80, // Offset for sticky header
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
