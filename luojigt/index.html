@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="罗技GT5游戏鼠标深度评测与使用指南。为您提供关于罗技G Pro X Superlight 2（GT5）的规格参数、电竞体验、驱动设置及选购建议。">
+    <meta name="keywords" content="罗技gt5, 罗技G Pro X Superlight 2, 电竞鼠标, 罗技G502, 游戏外设, 鼠标评测">
+    <title>罗技GT5-专业电竞游戏鼠标评测与选购指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b00; /* Logitech Orange vibe */
+            --primary-hover: #e65c00;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-green: #2ecc71;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --font-stack: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            padding: 1rem 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 6rem 0;
+            background: linear-gradient(180deg, rgba(18,18,18,0) 0%, rgba(18,18,18,1) 100%), 
+                        radial-gradient(circle at 50% 0%, #2a1a10 0%, transparent 60%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid #444;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+        }
+
+        /* Specs Grid */
+        .specs-section {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .spec-card {
+            background: var(--dark-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid #333;
+            transition: transform 0.3s ease;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .spec-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 6rem 0;
+        }
+
+        .feature-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .feature-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .feature-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 107, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            padding: 6rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: var(--border-radius);
+            border: 1px solid #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        th {
+            background-color: #252525;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        td {
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check {
+            color: var(--accent-green);
+        }
+
+        .cross {
+            color: #666;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid #333;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: var(--dark-bg);
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background: #1a1a1a;
+        }
+
+        .faq-answer {
+            padding: 0 1.2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.2rem;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            border-bottom: 1px solid #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid #222;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .feature-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>LOGI</span>GT5评测
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#specs" class="active">参数规格</a></li>
+                    <li><a href="#features">核心特性</a></li>
+                    <li><a href="#comparison">对比分析</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#buy" class="btn-subscribe">查看详情</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>重新定义轻量与精准：<span class="highlight">罗技GT5</span>电竞鼠标深度解析</h1>
+                <p>作为罗技G Pro X Superlight 2（GT5）的权威评测指南，本文为您详细剖析其顶级传感器、超轻设计及驱动设置，助您在电竞赛场抢占先机。</p>
+                <div class="hero-cta-group">
+                    <a href="#specs" class="btn btn-primary">查看详细参数</a>
+                    <a href="#features" class="btn btn-outline">了解使用体验</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specs Section -->
+        <section id="specs" class="specs-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>硬核参数一览</h2>
+                    <p>专为FPS游戏优化的工程数据</p>
+                </div>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-value">63g</div>
+                        <div class="spec-label">极致轻量化机身</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-value">3380</div>
+                        <div class="spec-label">旗舰级HERO 3380传感器</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-value">400</div>
+                        <div class="spec-label">最大DPI分辨率</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-value">1000Hz</div>
+                        <div class="spec-label">原生回报率</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-value">400</div>
+                        <div class="spec-label">最大加速度</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-value">50M</div>
+                        <div class="spec-label">微动开关寿命</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="feature-layout">
+                    <div class="feature-image">
+                        <!-- Placeholder for Product Image -->
+                        <img src="https://picsum.photos/seed/logitechmouse/600/400.jpg" alt="罗技GT5游戏鼠标产品图">
+                    </div>
+                    <div class="feature-text">
+                        <h3>为何选择罗技GT5？</h3>
+                        <p>罗技GT5（G Pro X Superlight 2）不仅仅是一台鼠标，它是为职业选手打造的精密仪器。其独特的重量分布设计，结合人体工学握感，即使在长时间激烈对战中也能保持手腕的极致舒适。</p>
+                        
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                                </div>
+                                <div>
+                                    <h4>HERO 3380 传感器</h4>
+                                    <p>提供无与伦比的追踪精度，即使在高速甩动中也能保持线条流畅，精准捕捉每一次微小的移动。</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                </div>
+                                <div>
+                                    <h4>无线无感连接</h4>
+                                    <p>采用低延迟蓝牙与LIGHTSPEED无线技术双模连接，确保在电竞比赛中的绝对稳定与极速响应。</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                                </div>
+                                <div>
+                                    <h4>人体工学握持</h4>
+                                    <p>专为右手设计，符合人体工学的轮廓，提供稳固的抓握体验，减少长时间游戏后的疲劳感。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="comparison" class="comparison-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>GT5 与 竞品对比</h2>
+                    <p>客观分析不同型号的性能差异</p>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特性</th>
+                                <th>罗技GT5 (G Pro X Superlight 2)</th>
+                                <th>竞品A (型号参考)</th>
+                                <th>竞品B (型号参考)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>重量</td>
+                                <td class="check">63g</td>
+                                <td class="check">70g</td>
+                                <td class="cross">84g</td>
+                            </tr>
+                            <tr>
+                                <td>传感器</td>
+                                <td class="check">HERO 3380</td>
+                                <td class="check">PAW3395</td>
+                                <td class="cross">PAW3395</td>
+                            </tr>
+                            <tr>
+                                <td>微动开关</td>
+                                <td class="check">罗技机械微动 (50M次)</td>
+                                <td class="cross">欧姆龙蓝点</td>
+                                <td class="cross">凯华红点</td>
+                            </tr>
+                            <tr>
+                                <td>连接方式</td>
+                                <td class="check">LIGHTSPEED / 蓝牙</td>
+                                <td class="check">LIGHTSPEED / 蓝牙</td>
+                                <td class="check">LIGHTSPEED / 蓝牙</td>
+                            </tr>
+                            <tr>
+                                <td>续航能力</td>
+                                <td class="check">约70小时</td>
+                                <td class="check">约70小时</td>
+                                <td class="cross">约50小时</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                    <p>关于罗技GT5的选购与使用疑惑</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">罗技GT5适合什么类型的游戏？</div>
+                    <div class="faq-answer">
+                        <p>罗技GT5专为FPS（第一人称射击）游戏设计，如《CS:GO》、《瓦罗兰特》、《Valorant》等。其轻量化设计和精准的传感器非常适合需要高精度瞄准和快速转身的场景。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">罗技GT5支持蓝牙模式吗？</div>
+                    <div class="faq-answer">
+                        <p>是的，罗技GT5支持LIGHTSPEED无线和蓝牙双模连接。在蓝牙模式下，您可以在平板或笔记本上使用，续航时间会更长，适合办公或非电竞场景。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">GT5的驱动软件G HUB支持哪些功能？</div>
+                    <div class="faq-answer">
+                        <p>通过G HUB软件，您可以自定义DPI、回报率、灯光效果以及宏命令。虽然GT5定位偏向竞技，但您依然可以通过软件调节按键映射，以适应个人的操作习惯。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">63g的重量会不会太轻导致手感空？</div>
+                    <div class="faq-answer">
+                        <p>罗技GT5虽然重量很轻，但采用了独特的配重块设计，使得重心更加平衡。大多数用户反馈其重心分布非常合理，既没有“飘”的感觉，又能提供极致的操控灵活性。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="buy">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <ul>
+                        <li><a href="#">网站介绍</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">联系合作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门外设</h4>
+                    <ul>
+                        <li><a href="#">罗技G502评测</a></li>
+                        <li><a href="#">雷蛇毒蝰V3 Pro</a></li>
+                        <li><a href="#">赛睿Rival 5</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>选购建议</h4>
+                    <ul>
+                        <li><a href="#">鼠标尺寸选择指南</a></li>
+                        <li><a href="#">回报率对游戏的影响</a></li>
+                        <li><a href="#">微动类型详解</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023-2024 罗技GT5评测指南. All Rights Reserved. 本站内容仅供参考，产品信息以官方发布为准。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
