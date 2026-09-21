@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="卷毛球冒险 - 探索奇幻森林的秘密，体验治愈系冒险游戏。查看游戏攻略、角色图鉴及最新更新动态。">
+    <meta name="keywords" content="卷毛球冒险, 冒险游戏, 治愈系游戏, 网页游戏, 攻略">
+    <title>卷毛球冒险 - 奇幻森林的治愈之旅</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fdcb6e;
+            --bg-color: #f0f3f8;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0.8rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .btn-play {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-play:hover {
+            background-color: #5649c0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Game Section */
+        .game-section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .game-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* Characters Section */
+        .characters-section {
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .character-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .character-card:hover {
+            background-color: #f8f9fa;
+        }
+
+        .char-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .char-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .char-role {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            padding: 60px 0;
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .guide-content h3 {
+            margin-bottom: 20px;
+            color: var(--text-main);
+            font-size: 1.5rem;
+        }
+
+        .guide-content p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .guide-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            color: var(--text-light);
+        }
+
+        .guide-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .guide-visual {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .visual-box {
+            background: #f0f3f8;
+            border-radius: 8px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .visual-box::after {
+            content: '操作界面示意图';
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: #b2bec3;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>卷</span>毛球冒险
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#game" class="active">游戏主页</a></li>
+                    <li><a href="#characters">角色图鉴</a></li>
+                    <li><a href="#guide">新手攻略</a></li>
+                    <li><a href="#download">下载客户端</a></li>
+                </ul>
+            </nav>
+            <a href="#game" class="btn-play">立即开始冒险</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>卷毛球冒险</h1>
+                <p>在这个色彩斑斓的奇幻森林中，开启一段治愈心灵的旅程。收集毛球，解开谜题，与伙伴们共同成长。</p>
+                <div class="hero-features">
+                    <div class="feature-item">🎮 纯净无广告</div>
+                    <div class="feature-item">✨ 治愈画风</div>
+                    <div class="feature-item">📱 跨平台同步</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section id="game" class="game-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门冒险关卡</h2>
+                    <p>探索不同区域的秘密，挑战你的智慧与反应</p>
+                </div>
+                <div class="game-grid">
+                    <article class="game-card">
+                        <div class="card-image">
+                            <span class="card-badge">热门</span>
+                            <!-- Placeholder image using picsum with seed for consistency -->
+                            <img src="https://picsum.photos/seed/wool1/400/300" alt="迷雾森林">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">迷雾森林</h3>
+                            <p class="card-desc">新手引导关卡，探索神秘的雾气森林，寻找失落的卷毛球。</p>
+                            <div class="card-meta">
+                                <span>难度: ★★☆</span>
+                                <span>推荐指数: 9.8</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div class="card-image">
+                            <span class="card-badge">更新</span>
+                            <img src="https://picsum.photos/seed/wool2/400/300" alt="水晶洞穴">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">水晶洞穴</h3>
+                            <p class="card-desc">充满反射与光影的地下迷宫，需要利用物理特性通过机关。</p>
+                            <div class="card-meta">
+                                <span>难度: ★★★</span>
+                                <span>推荐指数: 9.5</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/wool3/400/300" alt="云端浮岛">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">云端浮岛</h3>
+                            <p class="card-desc">在天空之境跳跃，避开风暴，收集稀有的漂浮卷毛球。</p>
+                            <div class="card-meta">
+                                <span>难度: ★★★★</span>
+                                <span>推荐指数: 9.2</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section id="characters" class="characters-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>冒险伙伴</h2>
+                    <p>结识性格各异的伙伴，组成最强冒险小队</p>
+                </div>
+                <div class="character-grid">
+                    <div class="character-card">
+                        <div class="char-avatar">🔵</div>
+                        <h4 class="char-name">波波</h4>
+                        <span class="char-role">先锋坦克</span>
+                    </div>
+                    <div class="character-card">
+                        <div class="char-avatar">🟢</div>
+                        <h4 class="char-name">乐乐</h4>
+                        <span class="char-role">敏捷射手</span>
+                    </div>
+                    <div class="character-card">
+                        <div class="char-avatar">🟡</div>
+                        <h4 class="char-name">暖暖</h4>
+                        <span class="char-role">辅助治疗</span>
+                    </div>
+                    <div class="character-card">
+                        <div class="char-avatar">🔴</div>
+                        <h4 class="char-name">酷酷</h4>
+                        <span class="char-role">智力解谜</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>新手指南</h2>
+                    <p>快速上手，掌握核心玩法技巧</p>
+                </div>
+                <div class="guide-container">
+                    <div class="guide-content">
+                        <h3>如何获得更多毛球？</h3>
+                        <p>在卷毛球冒险中，毛球不仅是货币，更是解锁新关卡的关键。除了在关卡中收集，你还可以通过完成每日任务和参与限时活动获得大量奖励。</p>
+                        <ul class="guide-list">
+                            <li>探索地图角落寻找隐藏宝箱</li>
+                            <li>参与公会副本获取稀有毛球</li>
+                            <li>观看视频广告领取每日补给</li>
+                        </ul>
+                        
+                        <h3>关卡攻略提示</h3>
+                        <p>部分关卡需要特定的操作顺序。观察环境中的光标提示，合理利用角色的技能组合是通关的关键。</p>
+                    </div>
+                    <aside class="guide-visual">
+                        <div class="visual-box">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                            </svg>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>卷毛球冒险</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">致力于为玩家提供最轻松、最有趣的网页冒险体验。无需安装，即点即玩。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#game">游戏主页</a></li>
+                        <li><a href="#download">下载APP</a></li>
+                        <li><a href="#guide">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>客服邮箱: support@wooladventure.com</li>
+                        <li>用户协议</li>
+                        <li>隐私政策</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 卷毛球冒险 版权所有. 本站为演示页面，不涉及真实商业运营。
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
